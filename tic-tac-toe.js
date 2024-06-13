@@ -102,7 +102,7 @@ const GameController = (() => {
           }
   
           const mark = document.createElement("h1");
-          mark.classList.add("mark");
+          mark.classList.add("mark", currentMark === "X" ? "mark-blue" : "mark-red");
           cell.appendChild(mark);
           mark.innerText = currentMark;
   

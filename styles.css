@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
 
 *,
 *::before,
@@ -57,18 +59,18 @@ h6 {
 
 .game-header {
   height: 10px;
-  width: 300px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .game-header > h1 {
-  font-size: 30px;
+  font-size: 50px;
 }
 
 .game {
-  background-color: white;
+  background-color: black;
   width: 700px;
   height: 700px;
   display: grid;
@@ -77,7 +79,7 @@ h6 {
 }
 
 .cell {
-  border: 1px solid black;
+  border: 1px solid white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -89,6 +91,28 @@ h6 {
 
 .mark {
   font-size: 100px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+
+.mark-red {
+  color: #f700ff;
+  text-shadow: 
+    0 0 5px #f700ff, 
+    0 0 10px #f700ff, 
+    0 0 20px #f700ff, 
+    0 0 40px #f700ff, 
+    0 0 80px #f700ff;
+}
+
+.mark-blue {
+  color: #00f6ff;
+  text-shadow: 
+    0 0 5px #00f6ff, 
+    0 0 10px #00f6ff, 
+    0 0 20px #00f6ff, 
+    0 0 40px #00f6ff, 
+    0 0 80px #00f6ff;
 }
 
 .gameover-modal {
