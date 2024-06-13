@@ -5,6 +5,8 @@ const Gameboard = (() => {
 
   const cells = document.querySelectorAll('.cell');
 
+  let isGameOver = false;
+
   const getCells = () => cells;
 
   const checkWin = (mark) => {
@@ -21,9 +23,39 @@ const Gameboard = (() => {
   };
 
 
+  const gameOver = () => {
+
+    return isGameOver = true;
+
+  }
+
+  const showGameOverScreen = (winner) => {
 
 
-  return {checkWin, getCells};
+    const gameOverScreen = document.querySelector('.gameover-modal');
+    const gameOverContainer = document.querySelector('.gameover-container');
+    const gameOverMessage = document.querySelector('.gameover-message');
+    
+
+    
+    gameOverScreen.style.display = 'block';
+
+    gameOverMessage.innerText = `${winner} wins the game.`
+
+    gameOverContainer.appendChild(gameOverMessage);
+
+
+
+    return gameOverScreen;
+      
+
+
+
+  }
+
+
+
+  return {checkWin, getCells, gameOver, showGameOverScreen};
 
 
 
@@ -71,12 +103,17 @@ const GameController = (() => {
   
           if (Gameboard.checkWin(currentMark)) {
             console.log(`${currentMark} wins`);
-            // You can add code here to display a message or take other actions
+            Gameboard.gameOver();
+            Gameboard.showGameOverScreen(currentMark);
           }
+
+          
         }
       });
     })
   }
+
+ console.log(Gameboard.gameOver());
   
 
 
@@ -92,8 +129,6 @@ GameController.startGame();
 
 
   
-
-
 
 
 
