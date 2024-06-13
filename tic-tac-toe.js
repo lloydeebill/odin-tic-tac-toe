@@ -5,6 +5,9 @@ const Gameboard = (() => {
 
   const cells = document.querySelectorAll('.cell');
 
+  const gameOverScreen = document.querySelector('.gameover-modal');
+  const gameOverMessage = document.querySelector('.gameover-message');
+
   let isGameOver = false;
 
   const getCells = () => cells;
@@ -31,31 +34,33 @@ const Gameboard = (() => {
 
   const showGameOverScreen = (winner) => {
 
-
-    const gameOverScreen = document.querySelector('.gameover-modal');
-    const gameOverContainer = document.querySelector('.gameover-container');
-    const gameOverMessage = document.querySelector('.gameover-message');
     
-
     
     gameOverScreen.style.display = 'block';
-
     gameOverMessage.innerText = `${winner} wins the game.`
 
-    gameOverContainer.appendChild(gameOverMessage);
 
-
+    const resetButton = document.querySelector('.reset-button');
+    resetButton.addEventListener("click",()=> resetBoard());
 
     return gameOverScreen;
-      
 
 
+  }
+
+  const resetBoard = () => {
+
+    gameOverScreen.style.display = 'none';
+
+    return cells.forEach(cell => {
+      cell.innerText = '';
+    })
 
   }
 
 
 
-  return {checkWin, getCells, gameOver, showGameOverScreen};
+  return {checkWin, getCells, gameOver, showGameOverScreen, resetBoard};
 
 
 
@@ -115,9 +120,6 @@ const GameController = (() => {
 
  console.log(Gameboard.gameOver());
   
-
-
-
   return {createPlayer, startGame};
 
 

@@ -113,3 +113,9 @@ h6 {
   color: white;
   font-size: 100px;
 }
+
+.reset-button {
+  width: 100px;
+  height: 50px;
+  background-color: white;
+}
