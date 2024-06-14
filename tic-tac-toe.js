@@ -5,6 +5,8 @@ const Gameboard = (() => {
 
   const cells = document.querySelectorAll('.cell');
 
+  const welcomeScreen = document.querySelector('.welcome-screen-modal');
+
   const gameOverScreen = document.querySelector('.gameover-modal');
   const gameOverMessage = document.querySelector('.gameover-message');
 
@@ -26,6 +28,24 @@ const Gameboard = (() => {
   };
 
 
+  const openWelcomeScreen = () => {
+
+    welcomeScreen.style.display = 'block';
+
+    const startButton = document.querySelector('.start-button');
+
+    startButton.addEventListener('click',() => {
+
+      welcomeScreen.style.display = 'none';
+
+    })
+
+    return {welcomeScreen }; 
+
+  } 
+
+
+
   const gameOver = () => {
 
     return isGameOver = true;
@@ -33,8 +53,6 @@ const Gameboard = (() => {
   }
 
   const showGameOverScreen = (winner) => {
-
-    
     
     gameOverScreen.style.display = 'block';
     gameOverMessage.innerText = `${winner} wins the game.`
@@ -58,9 +76,11 @@ const Gameboard = (() => {
 
   }
 
+  
 
 
-  return {checkWin, getCells, gameOver, showGameOverScreen, resetBoard};
+
+  return {checkWin, getCells, gameOver, showGameOverScreen, resetBoard, openWelcomeScreen};
 
 
 
@@ -125,6 +145,8 @@ const GameController = (() => {
 
 })();
 
+
+Gameboard.openWelcomeScreen();
 
 
 GameController.startGame();
