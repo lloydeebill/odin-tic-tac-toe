@@ -138,18 +138,21 @@ const GameController = (() => {
     })
   }
 
- console.log(Gameboard.gameOver());
+  const init = () => {
+    Gameboard.openWelcomeScreen();
+    startGame();
+
+  };
+
   
-  return {createPlayer, startGame};
+  return {createPlayer, startGame, init};
 
 
 })();
 
+GameController.init();
 
-Gameboard.openWelcomeScreen();
 
-
-GameController.startGame();
 
 
   

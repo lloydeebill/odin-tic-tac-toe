@@ -53,7 +53,8 @@ h6 {
 .game-container {
   display: grid;
   height: 100vh;
-  background-color: pink;
+  background-image: url(img/bg1.jpg);
+  background-size: cover;
   justify-content: center;
   align-items: center;
 }
@@ -67,10 +68,13 @@ h6 {
 }
 
 .game-header > h1 {
-  font-size: 50px;
+  font-size: 40px;
+  color: rgb(173, 173, 17);
 }
 
 .game {
+  position: fixed;
+  left: 32%;
   background-color: black;
   width: 700px;
   height: 700px;
@@ -80,7 +84,7 @@ h6 {
 }
 
 .cell {
-  border: 1px solid white;
+  border: 1px solid whitesmoke;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -97,23 +101,23 @@ h6 {
 
 
 .mark-red {
-  color: #f700ff;
+  color: #17c411;
   text-shadow: 
-    0 0 5px #f700ff, 
-    0 0 10px #f700ff, 
-    0 0 20px #f700ff, 
-    0 0 40px #f700ff, 
-    0 0 80px #f700ff;
+    0 0 5px #14aa0f, 
+    0 0 10px #14aa0f, 
+    0 0 20px #14aa0f, 
+    0 0 40px #14aa0f, 
+    0 0 80px #14aa0f;
 }
 
 .mark-blue {
-  color: #00f6ff;
+  color: #d0ff00;
   text-shadow: 
-    0 0 5px #00f6ff, 
-    0 0 10px #00f6ff, 
-    0 0 20px #00f6ff, 
-    0 0 40px #00f6ff, 
-    0 0 80px #00f6ff;
+    0 0 5px #d0ff00, 
+    0 0 10px #d0ff00, 
+    0 0 20px #d0ff00, 
+    0 0 40px #d0ff00, 
+    0 0 80px #d0ff00;
 }
 
 .gameover-modal {
