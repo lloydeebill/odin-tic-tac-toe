@@ -91,7 +91,7 @@ h6 {
 } 
 
 .cell:hover {
-  background-color: blueviolet;
+  background-color: yellow;
 }
 
 .mark {
@@ -101,23 +101,23 @@ h6 {
 
 
 .mark-red {
-  color: #17c411;
+  color: #ffb20d;
   text-shadow: 
-    0 0 5px #14aa0f, 
-    0 0 10px #14aa0f, 
-    0 0 20px #14aa0f, 
-    0 0 40px #14aa0f, 
-    0 0 80px #14aa0f;
+    0 0 5px #ffb20d, 
+    0 0 10px #ffb20d, 
+    0 0 20px #ffb20d, 
+    0 0 40px #ffb20d, 
+    0 0 80px #ffb20d;
 }
 
 .mark-blue {
-  color: #d0ff00;
+  color: #08c75e;
   text-shadow: 
-    0 0 5px #d0ff00, 
-    0 0 10px #d0ff00, 
-    0 0 20px #d0ff00, 
-    0 0 40px #d0ff00, 
-    0 0 80px #d0ff00;
+    0 0 5px #08c75e, 
+    0 0 10px #08c75e, 
+    0 0 20px #08c75e, 
+    0 0 40px #08c75e, 
+    0 0 80px #08c75e;
 }
 
 .gameover-modal {
@@ -143,11 +143,22 @@ h6 {
   font-size: 100px;
 }
 
+.start-button {
+  width: 200px;
+  height: 100px;
+  font-size: 20px;
+}
+
 .reset-button {
   width: 100px;
   height: 50px;
   background-color: white;
+  border-color: none;
+  width: 200px;
+  height: 100px;
+  font-size: 20px;
 }
+
 
 .welcome-screen-modal {
   display: none;

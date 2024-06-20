@@ -4,12 +4,10 @@
 const Gameboard = (() => {
 
   const cells = document.querySelectorAll('.cell');
-
   const welcomeScreen = document.querySelector('.welcome-screen-modal');
-
   const gameOverScreen = document.querySelector('.gameover-modal');
   const gameOverMessage = document.querySelector('.gameover-message');
-
+  let isBoardFull = false;
   let isGameOver = false;
 
   const getCells = () => cells;
@@ -20,12 +18,19 @@ const Gameboard = (() => {
       [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
       [0, 4, 8], [2, 4, 6]              // Diagonals
     ];
-  
+
   
   return winPatterns.some(pattern =>
       pattern.every(index => cells[index].innerText === mark)
     );
   };
+
+  const boardFull = () => {
+
+    return Array.from(cells).every(cell => cell.innerText !== "");
+    
+  }
+  
 
 
   const openWelcomeScreen = () => {
@@ -55,7 +60,7 @@ const Gameboard = (() => {
   const showGameOverScreen = (winner) => {
     
     gameOverScreen.style.display = 'block';
-    gameOverMessage.innerText = `${winner} wins the game.`
+    gameOverMessage.innerText = `${winner} wins the game`
 
 
     const resetButton = document.querySelector('.reset-button');
@@ -69,8 +74,8 @@ const Gameboard = (() => {
   const resetBoard = () => {
 
     gameOverScreen.style.display = 'none';
-
-    return cells.forEach(cell => {
+    isGameOver = false;
+    cells.forEach(cell => {
       cell.innerText = '';
     })
 
@@ -80,7 +85,7 @@ const Gameboard = (() => {
 
 
 
-  return {checkWin, getCells, gameOver, showGameOverScreen, resetBoard, openWelcomeScreen};
+  return {checkWin, getCells, gameOver, showGameOverScreen, resetBoard, openWelcomeScreen, boardFull};
 
 
 
@@ -130,6 +135,8 @@ const GameController = (() => {
             console.log(`${currentMark} wins`);
             Gameboard.gameOver();
             Gameboard.showGameOverScreen(currentMark);
+          } else if(Gameboard.boardFull()) {
+            Gameboard.showGameOverScreen("No one");
           }
 
           
