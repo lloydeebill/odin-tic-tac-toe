@@ -108,8 +108,8 @@ const GameController = (() => {
   }
 
 
-  const player1 = createPlayer("lloyd","X");
-  const player2 = createPlayer("bill","O");
+  const player1 = createPlayer("player1","X");
+  const player2 = createPlayer("player2","O");
 
 
 
